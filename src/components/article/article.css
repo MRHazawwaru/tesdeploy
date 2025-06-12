@@ -1,0 +1,187 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-sans;
+  -webkit-font-smoothing: antialiased; /* Untuk rendering font yang lebih baik */
+  -moz-osx-font-smoothing: grayscale; /* Untuk rendering font yang lebih baik */
+}
+
+/* Animate fade-in and slide-up for articles */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeSlideUp {
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+/* Smooth scale and shadow on hover for cards */
+.card-hover:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 30px rgba(124, 255, 54, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+/* Animate button underline on hover */
+.underline-anim {
+  position: relative;
+  overflow: hidden;
+  /* Warna teks dikelola oleh Tailwind: text-white */
+  /* font-weight dikelola oleh Tailwind: font-normal, kemudian hover:underline-anim akan ada override*/
+}
+
+.underline-anim::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: -100%;
+  background: #7cff36;
+  transition: left 0.3s ease;
+}
+
+.underline-anim:hover::after {
+  left: 0;
+}
+
+/* Animate pagination buttons on hover */
+.pagination-btn {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-weight: 600;
+  color: #4b5563; /* Tailwind gray-600 */
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 14px;
+}
+
+.pagination-btn:hover:not([aria-current="page"]):not(:disabled) { /* Hanya berlaku jika bukan halaman saat ini dan tidak dinonaktifkan */
+  background-color: #7cff36;
+  color: #111827; /* Tailwind gray-900 */
+  border-color: #7cff36;
+}
+
+.pagination-btn[aria-current="page"] {
+  background-color: #7cff36;
+  color: #111827;
+  border-color: #7cff36;
+  cursor: default;
+}
+
+/* Animate header subscribe button */
+.subscribe-btn {
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  background-size: 200% 200%;
+  background-position: left bottom;
+  background-image: linear-gradient(
+    45deg,
+    #7cff36,
+    #5ecb2f,
+    #7cff36,
+    #5ecb2f
+  );
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 0 8px #7cff36aa;
+  font-size: 14px;
+  border: none; /* Pastikan tidak ada border bawaan */
+}
+
+.subscribe-btn:hover {
+  background-position: right top;
+  box-shadow: 0 0 20px #7cff36cc;
+  filter: brightness(1.1);
+}
+
+/* Icon buttons hover with green */
+.icon-btn {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #6b7280; /* Tailwind gray-500 */
+  font-size: 16px;
+  background: none; /* Hapus background default button */
+  border: none; /* Hapus border default button */
+  padding: 0; /* Hapus padding default button */
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  color: #7cff36;
+  transform: scale(1.15);
+}
+
+/* Image zoom on hover */
+.img-hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Selengkapnya button with icon */
+.selengkapnya-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background: none; /* Hapus background default button */
+  border: none; /* Hapus border default button */
+  padding: 0; /* Hapus padding default button */
+  text-align: left; /* Sesuaikan alignment jika diperlukan */
+}
+
+.selengkapnya-btn:hover {
+  color: #7cff36;
+}
+
+.selengkapnya-btn i {
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+.selengkapnya-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Override Tailwind text sizes to px - Disesuaikan atau dihapus jika menggunakan konfigurasi Tailwind */
+/* Sebaiknya, Anda mengonfigurasi ukuran font ini di tailwind.config.js */
+/*
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+p {
+  font-size: 14px;
+}
+p.text-\[13px\] {
+  font-size: 13px;
+  font-weight: 600;
+}
+nav a {
+  font-size: 14px;
+  font-weight: 400;
+}
+*/

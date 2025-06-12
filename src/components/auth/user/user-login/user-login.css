@@ -1,0 +1,27 @@
+
+body,
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.password-toggle-icon i {
+  transition: transform 0.2s ease-in-out;
+}
+
+.password-toggle-icon i:hover {
+  transform: scale(1.1);
+}
+
+input:focus.custom-focus-ring {
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.3), 0 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-gradient-transition {
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.btn-gradient-transition:hover {
+  background-position: right center; 
+}

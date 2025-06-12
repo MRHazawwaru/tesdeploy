@@ -1,0 +1,32 @@
+
+
+/* Terapkan font Montserrat ke seluruh body atau elemen utama Anda */
+body,
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contoh CSS yang mungkin tidak bisa dijangkau Tailwind secara langsung */
+/* Jika Anda memiliki efek kustom atau pseudo-element */
+.password-toggle-icon i {
+  transition: transform 0.2s ease-in-out;
+}
+
+.password-toggle-icon i:hover {
+  transform: scale(1.1);
+}
+
+/* Jika Anda ingin gaya spesifik pada input focus yang lebih kompleks */
+input:focus.custom-focus-ring {
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.3), 0 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Untuk transisi background gradient pada button yang lebih halus jika diperlukan */
+.btn-gradient-transition {
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.btn-gradient-transition:hover {
+  background-position: right center; /* Menggeser gradient saat hover */
+}

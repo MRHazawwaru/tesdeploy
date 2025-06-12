@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease forwards;
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.gradient-text {
+  background: linear-gradient(-45deg, #9fff4a, #7dd83f, #5cb82e, #9fff4a);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* PREDIKSI */
+/* Warna tulisan toolbar export jadi hitam */
+.apexcharts-toolbar svg,
+.apexcharts-toolbar button,
+.apexcharts-toolbar span {
+  /* Using important to override ApexCharts' default styles,
+     which are often inline or higher specificity. */
+  color: rgb(255, 255, 255) !important;
+  fill: rgb(255, 255, 255) !important;
+  stroke: rgba(255, 255, 255, 0) !important; /* This was rgba(255,255,255,0) before, which is transparent. Keeping it. */
+}
+
+/* Hover background overlay (tooltip background) */
+.apexcharts-tooltip,
+.exportCSV,
+.exportPNG,
+.exportSVG {
+  background: rgba(255, 255, 255, 0.9) !important; /* Cannot directly convert rgba to simple Tailwind class */
+  color: rgb(0, 0, 0) !important; /* Cannot directly convert rgb to simple Tailwind class for specific elements like this */
+}
+
+/* Toolbar button hover background (optional) */
+.apexcharts-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important; /* Cannot directly convert rgba to simple Tailwind class for hover state */
+}
+
+/* Forcing white text inside any element with dark-bg-text-white or its children */
+.dark-bg-text-white,
+.dark-bg-text-white * {
+  color: white !important;
+}
